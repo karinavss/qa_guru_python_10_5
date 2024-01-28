@@ -1,16 +1,14 @@
 from selene import browser, be, have
-import pytest
 import os
 
 
 def test_demoqa_form():
-    browser.config.base_url = 'https://demoqa.com/automation-practice-form'
     browser.open('/')
     browser.element('#firstName').type('Leo')
     browser.element('#lastName').type('Dicaprio')
     browser.element('#userEmail').type('leonardo@gmail.com')
     browser.element("label[for= 'gender-radio-1']").click()
-    browser.element('#userNumber').type('89999999999')
+    browser.element('#userNumber').type('8999999999')
     browser.element('#dateOfBirthInput').click()
     browser.element(".react-datepicker__month-select").click().element('option[value="10"]').click()
     browser.element(".react-datepicker__year-select").click().element('option[value="1974"]').click()
@@ -28,7 +26,7 @@ def test_demoqa_form():
         'Leo Dicaprio',
         'leonardo@gmail.com',
         'Male',
-        '89999999999',
+        '8999999999',
         '11 November,1974',
         'Arts',
         'Music',
